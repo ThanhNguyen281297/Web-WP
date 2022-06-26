@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Update and upgrade package') {
             steps {
-                sh 'apt update -y '
-                sh 'apt upgrade -y'
+                sh 'sudo apt update -y '
+                sh 'sudo apt upgrade -y'
                 sh 'echo Done Update and Upgrade'
             }
         }
