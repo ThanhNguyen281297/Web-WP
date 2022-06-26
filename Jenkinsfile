@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build'){
             steps {
-                sh "scp -r '/var/lib/jenkins/Pipeline' root@192.168.26.108:/var/www/html"
+                sh "scp -r '/var/lib/jenkins/workspace/Pipeline' root@192.168.26.108:/var/www/html"
             }
         }
     }
