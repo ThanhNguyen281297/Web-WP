@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Copy source to Web Server') {
             steps {
-                sh 'cp -r /var/lib/jenkins/workspace/Build Web Pipeline /var/www/html'
+                sh 'cp -r /var/lib/jenkins/workspace/'Build Web WP Pipeline' /var/www/html'
                 sh 'echo Done copy source'
                 sh 'rm -rf /var/www/html/index-nginx-debian.html'
                 sh 'Done remove defaut nginx page'
