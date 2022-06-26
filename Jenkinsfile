@@ -11,7 +11,7 @@ pipeline {
                 sh "sudo cp -r /var/lib/jenkins/workspace/'Build Web WP Pipeline' /var/www"
                 sh 'echo Done copy source'
                 sh "sudo mv /var/www/'Build Web WP Pipeline' /var/www/WebWP"
-                sh 'echo Done Rename'
+                sh 'echo Done rename'
             }
         }
     }
