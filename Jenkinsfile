@@ -1,17 +1,40 @@
 pipeline {
     agent any
     stages {
-        stage('Clone') {
+        stage('SSH to Web server') {
             steps {
-                git 'https://github.com/ThanhNguyen281297/Web-WP.git'
+                sh 'ssh root@192.168.26.108'
+                sh '-----------------------'
+                sh 'echo Done SSH'
+                sh '-----------------------'
             }
         }
-        stage('Copy source to Web Server') {
+        stage('Update and upgrade package') {
             steps {
-                sh "sudo cp -r /var/lib/jenkins/workspace/'Build Web WP Pipeline' /var/www"
-                sh 'echo Done copy source'
-                sh "sudo mv /var/www/'Build Web WP Pipeline' /var/www/WebWP"
-                sh 'echo Done rename'
+                sh 'apt update && apt upgrade -y'
+                sh '-----------------------'
+                sh 'echo Done Update and Upgrade'
+                sh '-----------------------'
+            }
+        }
+        stage('Install Web Server Nginx') {
+            steps {
+                sh 'apt install nginx'
+                sh 'systemctl status nginx'
+                sh 'systemctl enable nginx'
+                sh '-----------------------'
+                sh 'echo Done Install Nginx'
+                sh '-----------------------'
+            }
+        }
+        stage(''){
+            steps {
+                sh 'apt install mysql-server'
+                sh 'systemctl status mysql'
+                sh 'systemctl enable mysql'
+                sh '-----------------------'
+                sh 'echo Done Install Mysql'
+                sh '-----------------------'
             }
         }
     }
