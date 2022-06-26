@@ -6,7 +6,7 @@ pipeline {
                 git 'https://github.com/ThanhNguyen281297/Web-WP.git'
             }
         }
-        stage('Copy source to Web Server'){
+        stage('Copy source to Web Server') {
             steps {
                 sh "cp -r /var/lib/jenkins/workspace/'Build Web WP Pipeline' /var/www/html"
                 sh 'echo Done copy source'
