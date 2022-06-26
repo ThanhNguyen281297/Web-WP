@@ -8,8 +8,8 @@ pipeline {
         }
         stage('Install Web Server Nginx') {
             steps {
-                sh 'apt install nginx -y'
-                sh 'systemctl status nginx'
+                sh 'sudo apt install nginx -y'
+                sh 'sudo systemctl status nginx'
             }
         }
     }
