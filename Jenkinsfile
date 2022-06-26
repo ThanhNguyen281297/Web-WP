@@ -8,8 +8,6 @@ pipeline {
         }
         stage('Copy source to Web Server'){
             steps {
-                sh 'chown -R jenkins:jenkins /var/www/html/'
-                sh 'echo Done permission'
                 sh "cp -r /var/lib/jenkins/workspace/'Build Web WP Pipeline' /var/www/html"
                 sh 'echo Done copy source'
                 sh 'rm -rf /var/www/html/index-nginx-debian.html'
