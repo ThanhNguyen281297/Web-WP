@@ -27,7 +27,7 @@ pipeline {
                 sh '-----------------------'
             }
         }
-        stage('Install Mysql'){
+        stage('Install MySql'){
             steps {
                 sh 'apt install mysql-server'
                 sh 'systemctl status mysql'
