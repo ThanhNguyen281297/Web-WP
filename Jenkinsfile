@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    statges {
+    stages {
         stage('Clone') {
             steps {
                 git 'https://github.com/ThanhNguyen281297/Web-WP.git'
